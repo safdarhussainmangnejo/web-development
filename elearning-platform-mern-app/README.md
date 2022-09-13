@@ -1,8 +1,6 @@
 # E-learning Platform Using MERN
 ## MAIN GOAL
 #### The main of this project was to built a platform that enable insctructors to sell their knowledge and teach people a lot of skills.
-## DEMO
-##### here is the demo : [EDUSPACE](https://e-duspace.herokuapp.com/)
 
 ## TECHS
 In this project we have used these technologies : 
