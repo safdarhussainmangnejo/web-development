@@ -18,12 +18,3 @@ To run this project you can simply type in the terminal :
 npm run dev 
 ```
 And it will run a script named dev which runs both server(nodemon) and client(react start script) apps.
-
-## Preview
-Here is some hidden parts of the project which only the admin or the teach can acess it : 
-+ Admin profile
-![admin panel](https://i.imgur.com/6IVGNUk.png)
-+ Teacher profile
-![Teacher panel](https://i.imgur.com/t3u0Abf.png)
-+ Edit a course:
-![EDIT](https://i.imgur.com/lc2YrBz.png)
