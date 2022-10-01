@@ -38,6 +38,7 @@ class Experience extends Component {
 				axiosInstance
 					.get("fetch-pdf", { responseType: "arraybuffer" })
 					.then((res) => {
+						console.log("Response form backend : ", res.data)
 						const pdfBlob = new Blob([res.data], {
 							type: "application/pdf",
 						});

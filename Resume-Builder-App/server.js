@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const pdf = require("html-pdf");
 const path = require("path");
-
+const cors = require("cors");
 const app = express();
 
 const pdfTemplate = require("./documents");
@@ -10,20 +10,22 @@ const pdfTemplate = require("./documents");
 const options = {
 	height: "42cm",
 	width: "29.7cm",
-	timeout: "6000",
+	timeout: "100000",
 };
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname, "/client")));
 
-app.use(express.static(path.join(__dirname, "/client/build")));
-
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+app.get("/", (req, res) => {
+	res.send("Hello Safdar")
+	// res.sendFile(path.join(__dirname, "/client", "index.html"));
 });
 
 // POST route for PDF generation....
 app.post("/create-pdf", (req, res) => {
+	console.log("Received Data: ", req.body);
 	pdf.create(pdfTemplate(req.body), options).toFile("Resume.pdf", (err) => {
 		if (err) {
 			console.log(err);
